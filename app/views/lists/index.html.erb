@@ -1,5 +1,7 @@
 <h2>All Lists</h2>
 
+<%= cl_image_tag("aretvswswptng8tcw5j8", width: 400, height: 300, crop: :fill) %>
+
 <% @lists.each do |list| %>
 <p> <%= link_to list.name, list_path(list)  %> </p>
 <% end %>
