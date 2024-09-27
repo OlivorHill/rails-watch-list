@@ -20,8 +20,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_26_113350) do
     t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_bookmarks_on_list_id"
-    t.index ["movie_id"], name: "index_bookmarks_on_movie_id"
+    t.index [ "list_id" ], name: "index_bookmarks_on_list_id"
+    t.index [ "movie_id" ], name: "index_bookmarks_on_movie_id"
   end
 
   create_table "lists", force: :cascade do |t|
