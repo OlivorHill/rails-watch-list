@@ -9,7 +9,7 @@ class BookmarksController < ApplicationController
     @bookmark = @list.bookmarks.new(bookmark_params)
 
     if @bookmark.save
-      redirect_to list_path(@list), notice: "Successfully created bookmark!"
+      redirect_to root_path(@list), notice: "Successfully created bookmark!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,7 +18,7 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to list_path(@bookmark.list)
+    redirect_to root_path(@bookmark.list)
   end
 
   private
