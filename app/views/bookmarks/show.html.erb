@@ -1,0 +1,16 @@
+<h3> <%= @bookmark.movie.title %> </h3>
+
+<img src= <%= @bookmark.movie.poster_url %> alt="movie-poster" width="150">
+
+<% @bookmark.movie.reviews.each do |review| %>
+  <hr>
+  <%=  "Review #{review.id}" %>
+  <%= "#{review.content}" %>
+  <hr>
+
+<% end %>
+<hr>
+
+<%= link_to "Back to #{@bookmark.list.name}", list_path(@bookmark.list.id), class: "btn btn-primary" %>
+
+<%= link_to "Back to all Lists", lists_path, class: "btn btn-primary text-white" %>
